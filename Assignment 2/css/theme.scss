@@ -1,0 +1,31 @@
+body {color: #555; font-size: 14px;}
+
+.navigation {
+  & {margin-top: 50px; margin-bottom: 10px;}
+  a {color: #777; text-transform: uppercase; transition: color 0.3s;}
+  a:hover {color: #ff9900;}
+  li {margin-right: 20px;}
+  li:last-child {margin-right: 0;}
+}
+
+.jumbotron {
+  & {background: transparent url('../images/lodging.png'); background-size: cover; color: #fff;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); margin-bottom: 0; border-bottom-left-radius: 0; border-bottom-right-radius: 0;}
+
+  h1 {margin-top: 50px; margin-bottom: 0; font-family: "Times New Roman", Times, serif; font-size: 45px;font-weight: 700;}
+  p {margin-bottom: 100px;}
+}
+
+.main-content {
+  & {background: #e9ecef; padding: 35px 55px; border-bottom: 1px solid #dee2e6;}
+  h2 {margin-bottom: 0; font-weight: 400;}
+  .lead {font-size: 14px;}
+  img {margin-bottom: 29px;}
+}
+
+.more-info {
+  & {padding: 30px 55px; background:rgba(233, 236, 239, 0.5)}
+  h3 {font-family: "Times New Roman", Times, serif; font-size: 18px;font-weight: 700;}
+  a {color: #00b9f2; transition: color 0.3s;}
+  a:hover {color: #ff9900;}
+}

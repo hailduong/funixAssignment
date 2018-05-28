@@ -1,0 +1,78 @@
+body {
+  color: #555;
+  font-size: 14px;
+}
+
+.navigation {
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+.navigation a {
+  color: #777;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+.navigation a:hover {
+  color: #ff9900;
+}
+.navigation li {
+  margin-right: 20px;
+}
+.navigation li:last-child {
+  margin-right: 0;
+}
+
+.jumbotron {
+  background: transparent url("../images/lodging.png");
+  background-size: cover;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.jumbotron h1 {
+  margin-top: 50px;
+  margin-bottom: 0;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 45px;
+  font-weight: 700;
+}
+.jumbotron p {
+  margin-bottom: 100px;
+}
+
+.main-content {
+  background: #e9ecef;
+  padding: 35px 55px;
+  border-bottom: 1px solid #dee2e6;
+}
+.main-content h2 {
+  margin-bottom: 0;
+  font-weight: 400;
+}
+.main-content .lead {
+  font-size: 14px;
+}
+.main-content img {
+  margin-bottom: 29px;
+}
+
+.more-info {
+  padding: 30px 55px;
+  background: rgba(233, 236, 239, 0.5);
+}
+.more-info h3 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+.more-info a {
+  color: #00b9f2;
+  transition: color 0.3s;
+}
+.more-info a:hover {
+  color: #ff9900;
+}
+
+/*# sourceMappingURL=theme.css.map */
