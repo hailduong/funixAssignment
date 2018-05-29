@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 1</title>
+</head>
+
+<body>
+
+<p>Click the button to display an alert box.</p>
+
+<button onclick="notify()">Try it</button>
+
+<p id="name" style="font-weight:bold"></p>
+<p id="city" style="font-weight:bold"></p>
+<p id="mobile" style="font-weight:bold"></p>
+<p id="email" style="font-weight:bold"></p>
+<p id="job" style="font-weight:bold"></p>
+
+<div style="display:none;" id="next-step">
+    <button>Bước tiếp theo</button>
+</div>
+
+<script>
+
+    // This function is used to show to next step "div" by changing it's style from "none" to "block"
+    function showNextStep() {
+        document.getElementById('next-step').style.display = 'block';
+    }
+
+    // This function is used to prompt and get user details, later get the info returned from user
+    // and set it into the html.
+    function getInfo() {
+
+        // Get user's name
+        const name = prompt("Hãy nhập tên của bạn", "Nguyễn Văn A");
+        if (name !== null) document.getElementById("name").innerHTML = `Tên bạn: ${name}`;
+
+        // Get user's city
+        const city = prompt("Hãy nhập thành phố bạn đang sống", "Hồ Chí Minh");
+        if (city !== null) document.getElementById("city").innerHTML = `Thành phố bạn sống: ${city}`;
+
+        // Get user's phone number
+        const mobile = prompt("Hãy nhập số điện thoại của bạn", "0938 123 456");
+        if (city !== null) document.getElementById("mobile").innerHTML = `Điện thoại của bạn: ${mobile}`;
+
+        // Extra feature: Get user's email address
+        const email = prompt("Hãy nhập email của bạn", "name@mail.com");
+        if (city !== null) document.getElementById("email").innerHTML = `Email của bạn: ${email}`;
+
+        // Extra feature: Get user's job
+        const job = prompt("Hãy nhập công việc của bạn", "Developer");
+        if (city !== null) document.getElementById("job").innerHTML = `Công việc của bạn: ${job}`;
+    }
+
+    // This function is the one that will start it all.
+    function notify() {
+        alert("Chào mừng bạn đến với ứng dụng JavaScript đầu tiên");
+
+        // After the alert is hidden, we get user's details
+        getInfo();
+
+        // After that, we show the "next step" div, which contains a button.
+        showNextStep();
+    }
+
+</script>
+
+</body>
+</html>
