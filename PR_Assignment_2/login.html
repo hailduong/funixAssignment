@@ -1,0 +1,136 @@
+<html>
+<head>
+    <title>JavaScript Login</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="./bootstrap.css">
+
+    <script Language="JavaScript">
+		let attempt = 0; // Variable to count number of attempts.
+
+
+		// Below function Executes on click of login button.
+		function validate() {
+
+			// This `error` variable will be used to check if the validation phase failed,
+			// then we increase the number of attempts
+			let error = false;
+
+			// Get the values
+			const username = document.getElementById('username').value;
+			const password = document.getElementById('password').value;
+			const passLength = password.length;
+
+			// Get the elements
+			const $errorMissingUsername = document.querySelector('.error-missing-username');
+			const $errorMissingPassword = document.querySelector('.error-missing-password');
+			const $errorPasswordTooShort = document.querySelector('.error-password-too-short');
+
+
+			// We will assume that every time user gets an error, he has entered the wrong username/password,
+			// therefore, we will increase the number of attempts.
+
+			// Validate username, if it's empty
+			if (!username) {
+				$errorMissingUsername.style.display = 'block';
+				error = true;
+			} else {
+				$errorMissingUsername.style.display = 'none';
+			}
+
+			// Validate password, if it's emtpy
+			if (!password) {
+				$errorMissingPassword.style.display = 'block';
+				error = true;
+			} else {
+				$errorMissingPassword.style.display = 'none';
+			}
+
+			// Validate password length if it's too short
+			if (passLength < 6) {
+				$errorPasswordTooShort.style.display = 'block';
+				error = true;
+			} else {
+				$errorPasswordTooShort.style.display = 'none';
+			}
+
+			// Validate if username is `admin` and password is `password`
+
+			// We can also check, if user/password is `admin/password` then it's correct, otherwise, it's wrong here and
+			// increase the attempt. But in this case, we just assume that all username/pass will get user login successfully,
+			// except for the cases when they get errors above!
+			if (username === 'admin' && password === 'password') {
+				window.location.assign('./default.html');
+			}
+
+            // If the validation failed, we increase the attempts
+			if (error) attempt++;
+
+			// Validate if users have tried for so many times,
+			if (attempt === 3) {
+				document.getElementById('username').disabled = true;
+				document.getElementById('password').disabled = true;
+				document.querySelector('.error-failed-so-many-time').style.display = 'block';
+			}
+		}
+    </script>
+
+</head>
+<body>
+
+<h2 font face="Georgia, Garamond, Times New Roman" color="#FF0000">
+    Login Form</h2>
+
+<font face="Verdana, Tahoma, Arial" size="3">
+    <form name="CreditApplication">
+        <table border="0" cellpadding="0" cellspacing="0" style="width:400px;">
+            <tr>
+                <td width="100">User Name:</td>
+                <td>
+                    <input class="form-control mt-3" type="text" name="username" id="username"/>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <p style="display:none" class="text-danger error-missing-username">
+                        Mising Username!
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="100">Password:</td>
+                <td>
+                    <input class="form-control mt-3" type="password" name="password" id="password"/>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <p style="display:none;" class="text-danger error-missing-password">
+                        Mising Password!
+                    </p>
+                    <p style="display:none;" class="text-danger error-password-too-short">
+                        Password is too short, please input at least 6 characters!
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="100"><br><br></td>
+                <td>
+                    <input type="button" value="Login" id="submit" onclick="validate()" class="btn btn-primary mt-3"/>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <p style="display:none;" class="text-danger error-failed-so-many-time mt-2">
+                        You have tried so many times!
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </form>
+</font>
+
+</body>
+</html>
