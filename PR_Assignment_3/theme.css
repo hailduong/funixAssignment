@@ -1,0 +1,23 @@
+#btn-enter-data, #btn-calculate-average, #btn-get-excellence {
+  color: #fff;
+}
+
+#btn-enter-data {
+  min-width: 110px;
+}
+
+@media (max-width: 767px) {
+  label.text-right {
+    text-align: left !important;
+  }
+
+  #btn-enter-data {
+    display: block;
+  }
+
+  .btn {
+    margin-bottom: 10px;
+  }
+}
+
+/*# sourceMappingURL=theme.css.map */
