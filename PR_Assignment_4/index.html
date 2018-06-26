@@ -1,0 +1,77 @@
+<html>
+<head>
+    <title>AngelPrime to-do List</title>
+    <meta charset=utf-8>
+    <meta content="IE=edge" http-equiv=X-UA-Compatible>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="lib/Bootstrap/bootstrap.css"/>
+    <link rel="stylesheet" href="lib/jQuery/jquery.ui.min.css"/>
+    <link rel="stylesheet" href="./assets/todo.css"/>
+    <link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.css">
+</head>
+
+<body class="well">
+<div id="container" class="container">
+
+    <div id="header"> To Do List</div>
+    <div class="row">
+        <div class="col-md-6 col-lg-3">
+            <div class="task-list task-container" id="pending">
+                <i class="fa fa-minus btn-minimize"></i>
+                <h3>Pending</h3>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="task-list task-container" id="inProgress">
+                <i class="fa fa-minus btn-minimize"></i>
+                <h3>In Progress</h3>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="task-list task-container" id="completed">
+                <i class="fa fa-minus btn-minimize"></i>
+                <h3>Completed</h3>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="task-list">
+                <i class="fa fa-minus btn-minimize"></i>
+                <h3>Add a task</h3>
+                <form id="todo-form">
+                    <input class="form-control mb-2" type="text" placeholder="Owner" id="owner">
+                    <input class="form-control mb-2" type="text" placeholder="Title" id="title"/>
+                    <textarea class="form-control mb-2" placeholder="Description" id="description"></textarea>
+                    <input class="form-control mb-2" type="text" id="datepicker" placeholder="Due Date (dd/mm/yyyy)"/>
+                    <input type="button" class="btn btn-primary" value="Add Task" onclick="todo.add();"/>
+                </form>
+
+                <input type="button" class="btn btn-danger" value="Clear Data" onclick="todo.clear();"/>
+                <input type="button" class="btn btn-info" value="Add Samples" onclick="todo.addSampleData();"/>
+
+                <div id="delete-div">
+                    Drag Here to Delete
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div style="clear:both;"></div>
+    <script type="text/javascript" src="lib/jQuery/jquery.min.js"></script>
+    <script type="text/javascript" src="lib/moment.min.js"></script>
+    <script type="text/javascript" src="lib/Bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="lib/jQuery/jquery.ui.min.js"></script>
+    <script type="text/javascript" src="assets/todo.js"></script>
+
+    <script type="text/javascript">
+		$("#datepicker").datepicker();
+		$("#datepicker").datepicker("option", "dateFormat", "dd/mm/yy");
+
+		$(".task-container").droppable();
+		$(".todo-task").draggable({revert: "valid", revertDuration: 200});
+		todo.init();
+    </script>
+
+</div>
+</body>
+</html>
